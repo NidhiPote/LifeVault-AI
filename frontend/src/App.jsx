@@ -1,10 +1,21 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
 import MemoryCard from "./components/MemoryCard";
 import AddMemoryModal from "./components/AddMemoryModal";
+import api from "./services/api";
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [memories, setMemories] = useState([]);
+
+useEffect(() => {
+  fetchMemories();
+}, []);
+
+const fetchMemories = async () => {
+  const response = await api.get("/memories");
+  setMemories(response.data);
+};
 
   return (
     <div className="min-h-screen bg-slate-950">
@@ -16,13 +27,16 @@ function App() {
         <p className="mt-2 text-slate-400">Here are your recent memories.</p>
 
         <div className="mt-10">
-          <MemoryCard
-            title="Interview Feedback"
-            category="Career"
-            description="Need stronger SQL joins and API testing skills."
-            date="28 June 2026"
-          />
-        </div>
+  {memories.map((memory) => (
+    <MemoryCard
+      key={memory.id}
+      title={memory.title}
+      category={memory.category}
+      description={memory.description}
+      date={memory.date}
+    />
+  ))}
+</div>
       </main>
 
       <AddMemoryModal

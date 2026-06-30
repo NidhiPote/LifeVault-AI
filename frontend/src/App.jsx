@@ -47,9 +47,10 @@ function App() {
       </main>
 
       <AddMemoryModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-      />
+      isOpen={isModalOpen}
+      onClose={() => setIsModalOpen(false)}
+      onMemoryAdded={fetchMemories}
+    />
     </div>
   );
 }

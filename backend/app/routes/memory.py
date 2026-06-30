@@ -4,12 +4,12 @@ from sqlalchemy.orm import Session
 from app.database import get_db
 from app.models.memory import Memory
 from app.schemas.memory import MemoryCreate, MemoryResponse
-
+from app.services.cognee_service import remember_memory
 router = APIRouter(tags=["Memories"])
 
 
 @router.post("/memory", response_model=MemoryResponse)
-def add_memory(memory_data: MemoryCreate, db: Session = Depends(get_db)):
+async def add_memory(memory_data: MemoryCreate, db: Session = Depends(get_db)):
     new_memory = Memory(
         title=memory_data.title,
         description=memory_data.description,
@@ -20,6 +20,13 @@ def add_memory(memory_data: MemoryCreate, db: Session = Depends(get_db)):
     db.add(new_memory)
     db.commit()
     db.refresh(new_memory)
+
+    await remember_memory(
+        title=new_memory.title,
+        description=new_memory.description,
+        category=new_memory.category,
+        date=str(new_memory.date),
+    )
 
     return new_memory
 

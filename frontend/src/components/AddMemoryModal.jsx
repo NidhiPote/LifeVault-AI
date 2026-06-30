@@ -1,7 +1,7 @@
 import { useState } from "react";
 import api from "../services/api";
 
-function AddMemoryModal({ isOpen, onClose }) {
+function AddMemoryModal({ isOpen, onClose, onMemoryAdded }) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("Health");
@@ -18,6 +18,7 @@ function AddMemoryModal({ isOpen, onClose }) {
 
       console.log("Memory saved:", response.data);
       alert("Memory saved successfully!");
+      onMemoryAdded();
       onClose();
     } catch (error) {
       console.error("Error saving memory:", error);

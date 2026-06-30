@@ -3,7 +3,7 @@ function Navbar({ onAddClick }) {
     <nav className="bg-slate-900 border-b border-slate-800 px-8 py-4">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-white">🧠 LifeVault AI</h1>
+          <h1 className="text-2xl font-bold text-white">LifeVault AI</h1>
           <p className="text-sm text-slate-400">
             Your AI remembers what you forget.
           </p>

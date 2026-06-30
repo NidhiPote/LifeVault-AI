@@ -5,6 +5,7 @@ from app.database import get_db
 from app.models.memory import Memory
 from app.schemas.memory import MemoryCreate, MemoryResponse
 from app.services.cognee_service import remember_memory
+
 router = APIRouter(tags=["Memories"])
 
 
@@ -47,3 +48,21 @@ def delete_memory(memory_id: int, db: Session = Depends(get_db)):
     db.commit()
 
     return {"message": "Memory deleted successfully"}
+
+
+@router.post("/memory/sync-cognee")
+async def sync_memories_to_cognee(db: Session = Depends(get_db)):
+    memories = db.query(Memory).all()
+
+    for memory in memories:
+        await remember_memory(
+            title=memory.title,
+            description=memory.description,
+            category=memory.category,
+            date=str(memory.date),
+        )
+
+    return {
+        "message": "All existing memories synced to Cognee",
+        "count": len(memories),
+    }

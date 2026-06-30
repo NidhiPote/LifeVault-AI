@@ -4,6 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.database import engine, Base
 from app.models import memory
 from app.routes import memory as memory_routes
+from app.routes import chat as chat_routes
 
 app = FastAPI(title="LifeVault AI API")
 
@@ -18,7 +19,7 @@ app.add_middleware(
 Base.metadata.create_all(bind=engine)
 
 app.include_router(memory_routes.router)
-
+app.include_router(chat_routes.router)
 
 @app.get("/")
 def root():

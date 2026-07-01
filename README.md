@@ -285,7 +285,7 @@ Built for the **Cognee × WeMakeDevs Hackathon** using React, FastAPI, PostgreSQ
 - PostgreSQL
 
 # Home page 
-<img width="2940" height="1912" alt="Screenshot 2026-07-01 at 9 27 09 PM" src="https://github.com/user-attachments/assets/3e308f10-536e-4b9f-ab6a-ac380e9c287b" />
+<img width="700" height="600" alt="Screenshot 2026-06-30 at 9 06 11 PM" src="https://github.com/user-attachments/assets/a118edf7-25aa-45e4-a55c-9f2cf4516388" />
 
 # To add new memory
-<img width="978" height="886" alt="Screenshot 2026-07-01 at 9 29 58 PM" src="https://github.com/user-attachments/assets/ff62d802-3758-45a2-8014-8fb69f762a33" />
+<img width="500" height="500" alt="Screenshot 2026-07-01 at 9 29 58 PM" src="https://github.com/user-attachments/assets/ff62d802-3758-45a2-8014-8fb69f762a33" />

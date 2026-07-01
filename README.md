@@ -275,7 +275,7 @@ Built for the **Cognee × WeMakeDevs Hackathon** using React, FastAPI, PostgreSQ
 
 ---
 
-# 🙏 Acknowledgements
+# Acknowledgements
 
 - Cognee
 - WeMakeDevs
@@ -283,3 +283,9 @@ Built for the **Cognee × WeMakeDevs Hackathon** using React, FastAPI, PostgreSQ
 - FastAPI
 - React
 - PostgreSQL
+
+# Home page 
+<img width="2940" height="1912" alt="Screenshot 2026-07-01 at 9 27 09 PM" src="https://github.com/user-attachments/assets/3e308f10-536e-4b9f-ab6a-ac380e9c287b" />
+
+# To add new memory
+<img width="978" height="886" alt="Screenshot 2026-07-01 at 9 29 58 PM" src="https://github.com/user-attachments/assets/ff62d802-3758-45a2-8014-8fb69f762a33" />
